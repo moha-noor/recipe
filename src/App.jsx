@@ -1,69 +1,40 @@
-import React, { Children } from 'react'
+import React from 'react';
 import Layout from './Componants/Layout/Layout';
 import Category from './Componants/Category/Category';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Details from './Componants/Details/Details';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-
-
-const router = createBrowserRouter([
+// ضبط basename ليطابق اسم الريبو في GitHub Pages
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Category />
+        },
+        {
+          path: "Details/:idMeal",
+          element: <Details />
+        },
+        {
+          path: '*',
+          element: <div><h2>!404 Not Found</h2></div>
+        }
+      ]
+    }
+  ],
   {
-    path: "recipe",element: <Layout/>,
-    children:[
-      {
-        index: true,element: <Category/>
-       
-      },{
-        path:"Details/:idMeal",element: <Details/>
-      },{
-    path:'*',element: <div><h2> !404 Not Found</h2></div>
+    basename: "/recipe" // مهم جداً لو اسم الريبو recipe
   }
-     
-
-    ]
-  },
-  {
-    path: "",element: <Layout/>,
-    children:[
-      {
-        index: true,element: <Category/>
-       
-      },{
-        path:"Details/:idMeal",element: <Details/>
-      },{
-    path:'*',element: <div><h2> !404 Not Found</h2></div>
-  }
-     
-
-    ]
-  }
-  
-  
-])
-
-
+);
 
 export default function App() {
-
-
-
-
-
-
-
   return (
-
-
     <>
-    
-
-
-    <RouterProvider router={router} />
-
-
-
+      <RouterProvider router={router} />
     </>
-
-    
-  )
+  );
 }
