@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+
+
+@theme{
+
+    --color-ora:#f29724;
+    --color-sidebar:#F9FAFB;
+    --color-sidebor:#d1d5db;
+    --color-BGP:#F4F2EE;
+    --color-btn:#21ba75;
+      
+  
+}
+
+
+
+
+
+.my-container
+{
+    
+  width: 100%;            
+  padding-right: var(--bs-gutter-x, 10rem); 
+  padding-left: var(--bs-gutter-x, 10rem); 
+  margin-right: auto;     
+  margin-left: auto;     
+}
+body {
+  font-family:  cursive;
+}
+h1{
+  font-family: "Edu NSW ACT Cursive", cursive;}
