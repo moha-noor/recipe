@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       },{
         path:"Details/:idMeal",element: <Details/>
       },{
-    path:'*',element: <div><h2>404 Not Found</h2></div>
+    path:'*',element: <div><h2> !404 Not Found</h2></div>
   }
      
 
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },{
         path:"Details/:idMeal",element: <Details/>
       },{
-    path:'*',element: <div><h2>404 Not Found</h2></div>
+    path:'*',element: <div><h2> !404 Not Found</h2></div>
   }
      
 
