@@ -4,7 +4,7 @@ import Category from './Componants/Category/Category';
 import Details from './Componants/Details/Details';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// ضبط basename ليطابق اسم الريبو في GitHub Pages
+
 const router = createBrowserRouter(
   [
     {
@@ -24,11 +24,26 @@ const router = createBrowserRouter(
           element: <div><h2>!404 Not Found</h2></div>
         }
       ]
+    },
+    {
+      path: "recipe",
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Category />
+        },
+        {
+          path: "Details/:idMeal",
+          element: <Details />
+        },
+        {
+          path: '*',
+          element: <div><h2>!404 Not Found</h2></div>
+        }
+      ]
     }
-  ],
-  {
-    basename: "/recipe" // مهم جداً لو اسم الريبو recipe
-  }
+  ]
 );
 
 export default function App() {
