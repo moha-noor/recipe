@@ -8,6 +8,21 @@ import Details from './Componants/Details/Details';
 
 const router = createBrowserRouter([
   {
+    path: "recipe",element: <Layout/>,
+    children:[
+      {
+        index: true,element: <Category/>
+       
+      },{
+        path:"Details/:idMeal",element: <Details/>
+      },{
+    path:'*',element: <div><h2>404 Not Found</h2></div>
+  }
+     
+
+    ]
+  },
+  {
     path: "",element: <Layout/>,
     children:[
       {
